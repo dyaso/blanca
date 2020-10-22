@@ -18,44 +18,42 @@ Pinned topics in `macros` channel at [Rust discord](https://discord.gg/4e9qXV).
 
 [Support library](https://doc.rust-lang.org/proc_macro/), [parsing](https://github.com/dtolnay/syn) and [quasi-quoting](https://docs.rs/quote/0.6.13/quote/) crates.
 
-### List of SIMD intrinsic instructions used in [Klein](https://www.jeremyong.com/klein/) 
+### List of all SIMD intrinsics used in [Klein](https://www.jeremyong.com/klein/), `_mm_` prefixes trimmed 
 
-All operate on four floats at a time?
+`grep -hor _mm_[a-z0-9_]* klein/src/* | sort | uniq` # -h = don't show file names, -o = only show matching words not context
 
-[_mm_and_ps](https://software.intel.com/sites/landingpage/IntrinsicsGuide/#text=_mm_and_ps&expand=5197)
-[_mm_andnot_ps](https://software.intel.com/sites/landingpage/IntrinsicsGuide/#text=_mm_andnot_ps&expand=5197)
-[_mm_blend_ps](https://software.intel.com/sites/landingpage/IntrinsicsGuide/#text=_mm_blend_ps&expand=5197)
-[_mm_castsi](https://software.intel.com/sites/landingpage/IntrinsicsGuide/#text=_mm_castsi&expand=5197)
-[_mm_cmpeq_ps](https://software.intel.com/sites/landingpage/IntrinsicsGuide/#text=_mm_cmpeq_ps&expand=5197)
-[_mm_cmplt_ps](https://software.intel.com/sites/landingpage/IntrinsicsGuide/#text=_mm_cmplt_ps&expand=5197)
-[_mm_dp_ps](https://software.intel.com/sites/landingpage/IntrinsicsGuide/#text=_mm_dp_ps&expand=5197)
-[_mm_four](https://software.intel.com/sites/landingpage/IntrinsicsGuide/#text=_mm_four&expand=5197)
-[_mm_loadu_ps](https://software.intel.com/sites/landingpage/IntrinsicsGuide/#text=_mm_loadu_ps&expand=5197)
-[_mm_movehdup_ps](https://software.intel.com/sites/landingpage/IntrinsicsGuide/#text=_mm_movehdup_ps&expand=5197)
-[_mm_movehl_ps](https://software.intel.com/sites/landingpage/IntrinsicsGuide/#text=_mm_movehl_ps&expand=5197)
-[_mm_moveldup_ps](https://software.intel.com/sites/landingpage/IntrinsicsGuide/#text=_mm_moveldup_ps&expand=5197)
-[_mm_movelh_ps](https://software.intel.com/sites/landingpage/IntrinsicsGuide/#text=_mm_movelh_ps&expand=5197)
-[_mm_movemask_ps](https://software.intel.com/sites/landingpage/IntrinsicsGuide/#text=_mm_movemask_ps&expand=5197)
-[_mm_mul_ps](https://software.intel.com/sites/landingpage/IntrinsicsGuide/#text=_mm_mul_ps&expand=5197)
-[_mm_rcp_ps](https://software.intel.com/sites/landingpage/IntrinsicsGuide/#text=_mm_rcp_ps&expand=5197)
-[_mm_rotation](https://software.intel.com/sites/landingpage/IntrinsicsGuide/#text=_mm_rotation&expand=5197)
-[_mm_rsqrt_ps](https://software.intel.com/sites/landingpage/IntrinsicsGuide/#text=_mm_rsqrt_ps&expand=5197)
-[_mm_set](https://software.intel.com/sites/landingpage/IntrinsicsGuide/#text=_mm_set&expand=5197)
-[_mm_set_epi](https://software.intel.com/sites/landingpage/IntrinsicsGuide/#text=_mm_set_epi&expand=5197)
-[_mm_set_ps](https://software.intel.com/sites/landingpage/IntrinsicsGuide/#text=_mm_set_ps&expand=5197)
-[_mm_set_ss](https://software.intel.com/sites/landingpage/IntrinsicsGuide/#text=_mm_set_ss&expand=5197)
-[_mm_setzero_ps](https://software.intel.com/sites/landingpage/IntrinsicsGuide/#text=_mm_setzero_ps&expand=5197)
-[_mm_seven](https://software.intel.com/sites/landingpage/IntrinsicsGuide/#text=_mm_seven&expand=5197)
-[_mm_shuffle_ps](https://software.intel.com/sites/landingpage/IntrinsicsGuide/#text=_mm_shuffle_ps&expand=5197)
-[_mm_store_ps](https://software.intel.com/sites/landingpage/IntrinsicsGuide/#text=_mm_store_ps&expand=5197)
-[_mm_store_ss](https://software.intel.com/sites/landingpage/IntrinsicsGuide/#text=_mm_store_ss&expand=5197)
-[_mm_storeu_ps](https://software.intel.com/sites/landingpage/IntrinsicsGuide/#text=_mm_storeu_ps&expand=5197)
-[_mm_sub_ps](https://software.intel.com/sites/landingpage/IntrinsicsGuide/#text=_mm_sub_ps&expand=5197)
-[_mm_sub_ss](https://software.intel.com/sites/landingpage/IntrinsicsGuide/#text=_mm_sub_ss&expand=5197)
-[_mm_shuffle_ps](https://software.intel.com/sites/landingpage/IntrinsicsGuide/#text=_mm_shuffle_ps&expand=5197)
-[_mm_three](https://software.intel.com/sites/landingpage/IntrinsicsGuide/#text=_mm_three&expand=5197)
-[_mm_translation](https://software.intel.com/sites/landingpage/IntrinsicsGuide/#text=_mm_translation&expand=5197)
-[_mm_two](https://software.intel.com/sites/landingpage/IntrinsicsGuide/#text=_mm_two&expand=5197)
-[_mm_unpackhi_ps](https://software.intel.com/sites/landingpage/IntrinsicsGuide/#text=_mm_unpackhi_ps&expand=5197)
-[_mm_unpacklo_ps](https://software.intel.com/sites/landingpage/IntrinsicsGuide/#text=_mm_unpacklo_ps&expand=5197)
-[_mm_xor_ps](https://software.intel.com/sites/landingpage/IntrinsicsGuide/#text=_mm_xor_ps&expand=5197)
+[add_ps](https://software.intel.com/sites/landingpage/IntrinsicsGuide/#text=_mm_add_ps), 
+[add_ss](https://software.intel.com/sites/landingpage/IntrinsicsGuide/#text=_mm_add_ss), 
+[andnot_ps](https://software.intel.com/sites/landingpage/IntrinsicsGuide/#text=_mm_andnot_ps), 
+[and_ps](https://software.intel.com/sites/landingpage/IntrinsicsGuide/#text=_mm_and_ps), 
+[blend_ps](https://software.intel.com/sites/landingpage/IntrinsicsGuide/#text=_mm_blend_ps), 
+[castsi128_ps](https://software.intel.com/sites/landingpage/IntrinsicsGuide/#text=_mm_castsi128_ps), 
+[cmpeq_ps](https://software.intel.com/sites/landingpage/IntrinsicsGuide/#text=_mm_cmpeq_ps), 
+[cmplt_ps](https://software.intel.com/sites/landingpage/IntrinsicsGuide/#text=_mm_cmplt_ps), 
+[dp_ps](https://software.intel.com/sites/landingpage/IntrinsicsGuide/#text=_mm_dp_ps), 
+[loadu_ps](https://software.intel.com/sites/landingpage/IntrinsicsGuide/#text=_mm_loadu_ps), 
+[movehdup_ps](https://software.intel.com/sites/landingpage/IntrinsicsGuide/#text=_mm_movehdup_ps), 
+[movehl_ps](https://software.intel.com/sites/landingpage/IntrinsicsGuide/#text=_mm_movehl_ps), 
+[moveldup_ps](https://software.intel.com/sites/landingpage/IntrinsicsGuide/#text=_mm_moveldup_ps), 
+[movelh_ps](https://software.intel.com/sites/landingpage/IntrinsicsGuide/#text=_mm_movelh_ps), 
+[movemask_ps](https://software.intel.com/sites/landingpage/IntrinsicsGuide/#text=_mm_movemask_ps), 
+[mul_ps](https://software.intel.com/sites/landingpage/IntrinsicsGuide/#text=_mm_mul_ps), 
+[mul_ss](https://software.intel.com/sites/landingpage/IntrinsicsGuide/#text=_mm_mul_ss), 
+[rcp_ps](https://software.intel.com/sites/landingpage/IntrinsicsGuide/#text=_mm_rcp_ps), 
+[rsqrt_ps](https://software.intel.com/sites/landingpage/IntrinsicsGuide/#text=_mm_rsqrt_ps), 
+[set1_ps](https://software.intel.com/sites/landingpage/IntrinsicsGuide/#text=_mm_set1_ps), 
+[set_epi32](https://software.intel.com/sites/landingpage/IntrinsicsGuide/#text=_mm_set_epi32), 
+[set_ps](https://software.intel.com/sites/landingpage/IntrinsicsGuide/#text=_mm_set_ps), 
+[set_ss](https://software.intel.com/sites/landingpage/IntrinsicsGuide/#text=_mm_set_ss), 
+[setzero_ps](https://software.intel.com/sites/landingpage/IntrinsicsGuide/#text=_mm_setzero_ps), 
+[shuffle_ps](https://software.intel.com/sites/landingpage/IntrinsicsGuide/#text=_mm_shuffle_ps), 
+[store_ps](https://software.intel.com/sites/landingpage/IntrinsicsGuide/#text=_mm_store_ps), 
+[store_ss](https://software.intel.com/sites/landingpage/IntrinsicsGuide/#text=_mm_store_ss), 
+[storeu_ps](https://software.intel.com/sites/landingpage/IntrinsicsGuide/#text=_mm_storeu_ps), 
+[sub_ps](https://software.intel.com/sites/landingpage/IntrinsicsGuide/#text=_mm_sub_ps), 
+[sub_ss](https://software.intel.com/sites/landingpage/IntrinsicsGuide/#text=_mm_sub_ss), 
+[swizzle_ps](https://software.intel.com/sites/landingpage/IntrinsicsGuide/#text=_mm_swizzle_ps), 
+[unpackhi_ps](https://software.intel.com/sites/landingpage/IntrinsicsGuide/#text=_mm_unpackhi_ps), 
+[unpacklo_ps](https://software.intel.com/sites/landingpage/IntrinsicsGuide/#text=_mm_unpacklo_ps), 
+[xor_ps](https://software.intel.com/sites/landingpage/IntrinsicsGuide/#text=_mm_xor_ps), 
+
