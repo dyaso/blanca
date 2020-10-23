@@ -56,4 +56,3 @@ Pinned topics in `macros` channel at [Rust discord](https://discord.gg/4e9qXV).
 [unpackhi_ps](https://software.intel.com/sites/landingpage/IntrinsicsGuide/#text=_mm_unpackhi_ps), 
 [unpacklo_ps](https://software.intel.com/sites/landingpage/IntrinsicsGuide/#text=_mm_unpacklo_ps), 
 [xor_ps](https://software.intel.com/sites/landingpage/IntrinsicsGuide/#text=_mm_xor_ps), 
-
