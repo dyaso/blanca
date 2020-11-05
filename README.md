@@ -1,4 +1,4 @@
-Unstarted attempt at writing a procedural Rust macro for generating geometric algebra implementations given a specified metric and choice of basis blades and their storage order.
+Unstarted attempt at writing a procedural Rust macro for generating geometric algebra implementations given a specified metric and choice of basis blades and their storage pattern.
 
 'Procedural' means it's a program that runs inside the compiler at compile time and can do arbitrary processing (as opposed to 'declarative' macros which are more limited, like C preprocessor ones). They come in three kinds:
 
@@ -17,6 +17,12 @@ Pinned topics in `macros` channel at [Rust discord](https://discord.gg/4e9qXV).
 [Reverse Polish Notation implemented in a declarative macro](https://rreverser.com/writing-complex-macros-in-rust/).
 
 [Support library](https://doc.rust-lang.org/proc_macro/), [parsing](https://github.com/dtolnay/syn) and [quasi-quoting](https://docs.rs/quote/0.6.13/quote/) crates.
+
+[Geometric Algebra for Computer Science *[by Dorst, Fontijne, Mann, 2007]*](https://cs.uwaterloo.ca/~smann/GA/)'s unoptimized Java reference implementation, included in a folder in this repository. 
+
+[Daniel Fontijne's 29MB PhD thesis "Efficient Implementation of Geometric Algebra"](https://dare.uva.nl/search?metis.record.id=274934) describing the [`Gaigen 2` system](https://github.com/Sciumo/gaigen) in more detail than the book.
+
+The [`vek` crate](https://github.com/yoanlcq/vek) for graphics maths is targeting the same sort of domain as we'd like to generate code for.
 
 ### List of all SIMD intrinsics used in [Klein](https://www.jeremyong.com/klein/), `_mm_` prefixes trimmed 
 
